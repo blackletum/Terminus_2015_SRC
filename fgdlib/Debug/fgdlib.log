@@ -1,0 +1,24 @@
+﻿Build started 21.3.2014. 1:24:45.
+     1>Project "D:\mod source\New folder\sp\src\fgdlib\fgdlib.vcxproj" on node 2 (Build target(s)).
+     1>PreBuildEvent:
+         if EXIST ..\lib\public\.\fgdlib.lib ( for /f "delims=" %%A in ('attrib "..\lib\public\.\fgdlib.lib"') do set valveTmpIsReadOnly="%%A"
+         ) else ( if not EXIST ..\lib\public\. mkdir ..\lib\public\. )
+         set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+         if "%valveTmpIsReadOnlyLetter%"=="R" (
+             attrib -r ..\lib\public\.\fgdlib.lib
+             ..\devtools\bin\gnu\touch.exe -d "1999-01-01" ..\lib\public\.\fgdlib.lib
+             attrib +r ..\lib\public\.\fgdlib.lib
+         )
+         if exist "..\devtools\bin\vpc.exe" "..\devtools\bin\vpc.exe" -crc2 "fgdlib.vcxproj"
+         if ERRORLEVEL 1 exit /b 1
+         
+         :VCEnd
+       CustomBuild:
+         Running VPC CRC Check - fgdlib.vpc
+       Lib:
+         fgdlib.vcxproj -> D:\mod source\New folder\sp\src\fgdlib\..\lib\public\.\fgdlib.lib
+     1>Done Building Project "D:\mod source\New folder\sp\src\fgdlib\fgdlib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.68
