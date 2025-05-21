@@ -1,0 +1,52 @@
+﻿Build started 21.3.2014. 1:44:53.
+     1>Project "D:\mod source\New folder\sp\src\utils\motionmapper\motionmapper.vcxproj" on node 2 (Build target(s)).
+     1>PreBuildEvent:
+         if EXIST ..\..\..\game\bin\.\motionmapper.exe for /f "delims=" %%A in ('attrib "..\..\..\game\bin\.\motionmapper.exe"') do set valveTmpIsReadOnly="%%A"
+         set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+         if "%valveTmpIsReadOnlyLetter%"=="R" del /q "D:\mod source\New folder\sp\src\utils\motionmapper\Release\"motionmapper.exe
+         if exist "..\..\devtools\bin\vpc.exe" "..\..\devtools\bin\vpc.exe" -crc2 "motionmapper.vcxproj"
+         if ERRORLEVEL 1 exit /b 1
+         
+         :VCEnd
+       CustomBuild:
+         Running VPC CRC Check - motionmapper.vpc
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\common /I..\..\public /I..\..\public\tier0 /I..\..\public\tier1 /I..\common /I..\nvtristriplib /I..\..\Game_Shared /Zi /nologo /W4 /WX- /MP /O2 /Ob2 /Oi /Ot /Oy- /D VPC /D RAD_TELEMETRY_DISABLED /D WIN32 /D _WIN32 /D NDEBUG /D _WINDOWS /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _ALLOW_RUNTIME_LIBRARY_MISMATCH /D _ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH /D _ALLOW_MSC_VER_MISMATCH /D _USING_V110_SDK71_ /D _MBCS /D COMPILER_MSVC32 /D COMPILER_MSVC32 /D COMPILER_MSVC /D EXENAME=motionmapper /D _DLL_EXT=.dll /D DEV_BUILD /D FRAME_POINTER_OMISSION_DISABLED /D PROTECTED_THINGS_DISABLE /D _EXTERNAL_DLL_EXT=.dll /D VPCGAMECAPS=VALVE /D "PROJECTDIR=D:\mod source\New folder\sp\src\utils\motionmapper" /D _DLL_EXT=.dll /D SOURCE1=1 /D VPCGAME=valve /GF /Gm- /MT /GS /Gy /arch:SSE /fp:fast /Zc:wchar_t /Zc:forScope /GR /openmp- /Fo".\Release\.\/" /Fd".\Release\.\/vc120.pdb" /Gd /TP /wd4316 /analyze- /FC /errorReport:prompt  /d2Zi+ motionmapper.cpp
+         motionmapper.cpp
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\.\\motionmapper.exe" /INCREMENTAL:NO /NOLOGO shell32.lib user32.lib advapi32.lib gdi32.lib comdlg32.lib ole32.lib winmm.lib /NODEFAULTLIB:libc /NODEFAULTLIB:libcd /NODEFAULTLIB:libcmtd /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Release\.\/motionmapper.pdb" /SUBSYSTEM:CONSOLE,"5.01" /OPT:REF /OPT:NOICF /TLBID:1 /DYNAMICBASE:NO /NXCOMPAT /IMPLIB:".\Release\.\motionmapper.lib" /MACHINE:X86 /SAFESEH:NO /NXCOMPAT /ignore:4221 .\Release\.\\pointeroverride.obj
+         .\Release\.\/cmdlib.obj
+         .\Release\.\/filesystem_helpers.obj
+         .\Release\.\/filesystem_init.obj
+         .\Release\.\/filesystem_tools.obj
+         .\Release\.\/memoverride.obj
+         .\Release\.\/motionmapper.obj
+         .\Release\.\/scriplib.obj
+         ..\..\lib\public\mathlib.lib
+         ..\..\lib\public\nvtristrip.lib
+         ..\..\lib\public\tier0.lib
+         ..\..\lib\public\tier1.lib
+         ..\..\lib\public\tier2.lib
+         ..\..\lib\public\vstdlib.lib
+     1>mathlib.lib(mathlib_base.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+            Creating library .\Release\.\motionmapper.lib and object .\Release\.\motionmapper.exp
+         motionmapper.vcxproj -> D:\mod source\New folder\sp\src\utils\motionmapper\.\Release\.\motionmapper.exe
+       PostBuildEvent:
+         copy "D:\mod source\New folder\sp\src\utils\motionmapper\Release\"motionmapper.exe ..\..\..\game\bin\.\motionmapper.exe >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         if exist "D:\mod source\New folder\sp\src\utils\motionmapper\Release\"motionmapper.map copy "D:\mod source\New folder\sp\src\utils\motionmapper\Release\"motionmapper.map ..\..\..\game\bin\.\motionmapper.map >nul
+         copy "D:\mod source\New folder\sp\src\utils\motionmapper\Release\"motionmapper.pdb ..\..\..\game\bin\.\motionmapper.pdb >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         goto BuildEventOK
+         :BuildEventFailed
+         echo *** ERROR! PostBuildStep FAILED for Motionmapper! EXE or DLL is probably running. ***
+         del /q "D:\mod source\New folder\sp\src\utils\motionmapper\Release\"motionmapper.exe
+         exit 1
+         :BuildEventOK
+         
+         :VCEnd
+     1>Done Building Project "D:\mod source\New folder\sp\src\utils\motionmapper\motionmapper.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.73

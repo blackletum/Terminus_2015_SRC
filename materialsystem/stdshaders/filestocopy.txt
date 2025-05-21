@@ -1,0 +1,6 @@
+D:\mod_source\New_folder\sp\src\devtools\bin\d3dx9_33.dll 
+D:\mod_source\New_folder\sp\src\dx10sdk\utilities\dx9_30\dx_proxy.dll 
+D:\mod_source\Source_SDK_Base_2013_Singleplayer\bin\shadercompile.exe 
+D:\mod_source\Source_SDK_Base_2013_Singleplayer\bin\shadercompile_dll.dll 
+D:\mod_source\Source_SDK_Base_2013_Singleplayer\bin\vstdlib.dll 
+D:\mod_source\Source_SDK_Base_2013_Singleplayer\bin\tier0.dll 

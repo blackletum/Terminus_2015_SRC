@@ -1,0 +1,33 @@
+﻿Build started 10.2.2014. 0:58:18.
+     1>Project "D:\mod source\New folder\sp\src\utils\vice\vice.vcxproj" on node 5 (Build target(s)).
+     1>PreBuildEvent:
+         if EXIST ..\..\..\game\bin\.\vice.exe for /f "delims=" %%A in ('attrib "..\..\..\game\bin\.\vice.exe"') do set valveTmpIsReadOnly="%%A"
+         set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+         if "%valveTmpIsReadOnlyLetter%"=="R" del /q "D:\mod source\New folder\sp\src\utils\vice\Debug\"vice.exe
+         if exist "..\..\devtools\bin\vpc.exe" "..\..\devtools\bin\vpc.exe" -crc2 "vice.vcxproj"
+         if ERRORLEVEL 1 exit /b 1
+         
+         :VCEnd
+       CustomBuild:
+         Running VPC CRC Check - vice.vpc
+       Link:
+         vice.vcxproj -> D:\mod source\New folder\sp\src\utils\vice\.\Debug\.\vice.exe
+       PostBuildEvent:
+         copy "D:\mod source\New folder\sp\src\utils\vice\Debug\"vice.exe ..\..\..\game\bin\.\vice.exe >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         if exist "D:\mod source\New folder\sp\src\utils\vice\Debug\"vice.map copy "D:\mod source\New folder\sp\src\utils\vice\Debug\"vice.map ..\..\..\game\bin\.\vice.map >nul
+         copy "D:\mod source\New folder\sp\src\utils\vice\Debug\"vice.pdb ..\..\..\game\bin\.\vice.pdb >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         goto BuildEventOK
+         :BuildEventFailed
+         echo *** ERROR! PostBuildStep FAILED for Vice! EXE or DLL is probably running. ***
+         del /q "D:\mod source\New folder\sp\src\utils\vice\Debug\"vice.exe
+         exit 1
+         :BuildEventOK
+         
+         :VCEnd
+     1>Done Building Project "D:\mod source\New folder\sp\src\utils\vice\vice.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.94

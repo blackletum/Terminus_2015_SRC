@@ -1,0 +1,8 @@
+﻿Build started 10.2.2014. 1:02:17.
+     1>Project "D:\mod source\New folder\sp\src\utils\qc_eyes\qc_eyes.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(369,5): error MSB8031: Building an MFC project for a non-Unicode character set is deprecated. You must change the project property to Unicode or download an additional library. See http://go.microsoft.com/fwlink/p/?LinkId=286820 for more information.
+     1>Done Building Project "D:\mod source\New folder\sp\src\utils\qc_eyes\qc_eyes.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.00

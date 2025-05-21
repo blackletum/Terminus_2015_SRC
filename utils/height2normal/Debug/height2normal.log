@@ -1,0 +1,43 @@
+﻿Build started 10.2.2014. 0:58:14.
+     1>Project "D:\mod source\New folder\sp\src\utils\height2normal\height2normal.vcxproj" on node 3 (Build target(s)).
+     1>PreBuildEvent:
+         if EXIST ..\..\..\game\bin\.\height2normal.exe for /f "delims=" %%A in ('attrib "..\..\..\game\bin\.\height2normal.exe"') do set valveTmpIsReadOnly="%%A"
+         set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+         if "%valveTmpIsReadOnlyLetter%"=="R" del /q "D:\mod source\New folder\sp\src\utils\height2normal\Debug\"height2normal.exe
+         if exist "..\..\devtools\bin\vpc.exe" "..\..\devtools\bin\vpc.exe" -crc2 "height2normal.vcxproj"
+         if ERRORLEVEL 1 exit /b 1
+         
+         :VCEnd
+       CustomBuild:
+         Running VPC CRC Check - height2normal.vpc
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\.\\height2normal.exe" /INCREMENTAL /NOLOGO shell32.lib user32.lib advapi32.lib gdi32.lib comdlg32.lib ole32.lib /NODEFAULTLIB:libc /NODEFAULTLIB:libcd /NODEFAULTLIB:libcmt /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug\.\/height2normal.pdb" /SUBSYSTEM:CONSOLE,"5.01" /TLBID:1 /DYNAMICBASE:NO /NXCOMPAT /IMPLIB:".\Debug\.\height2normal.lib" /MACHINE:X86 /SAFESEH:NO /NXCOMPAT /ignore:4221 .\Debug\.\\pointeroverride.obj
+         .\Debug\.\/height2normal.obj
+         ..\..\lib\public\bitmap.lib
+         ..\..\lib\public\mathlib.lib
+         ..\..\lib\public\tier0.lib
+         ..\..\lib\public\tier1.lib
+         ..\..\lib\public\tier2.lib
+         ..\..\lib\public\vstdlib.lib
+         LINK : .\Debug\.\\height2normal.exe not found or not built by the last incremental link; performing full link
+            Creating library .\Debug\.\height2normal.lib and object .\Debug\.\height2normal.exp
+         height2normal.vcxproj -> D:\mod source\New folder\sp\src\utils\height2normal\.\Debug\.\height2normal.exe
+       PostBuildEvent:
+         copy "D:\mod source\New folder\sp\src\utils\height2normal\Debug\"height2normal.exe ..\..\..\game\bin\.\height2normal.exe >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         if exist "D:\mod source\New folder\sp\src\utils\height2normal\Debug\"height2normal.map copy "D:\mod source\New folder\sp\src\utils\height2normal\Debug\"height2normal.map ..\..\..\game\bin\.\height2normal.map >nul
+         copy "D:\mod source\New folder\sp\src\utils\height2normal\Debug\"height2normal.pdb ..\..\..\game\bin\.\height2normal.pdb >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         goto BuildEventOK
+         :BuildEventFailed
+         echo *** ERROR! PostBuildStep FAILED for Height2normal! EXE or DLL is probably running. ***
+         del /q "D:\mod source\New folder\sp\src\utils\height2normal\Debug\"height2normal.exe
+         exit 1
+         :BuildEventOK
+         
+         :VCEnd
+     1>Done Building Project "D:\mod source\New folder\sp\src\utils\height2normal\height2normal.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.94

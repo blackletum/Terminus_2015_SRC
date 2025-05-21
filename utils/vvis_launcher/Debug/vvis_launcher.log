@@ -1,0 +1,33 @@
+﻿Build started 10.2.2014. 0:58:21.
+     1>Project "D:\mod source\New folder\sp\src\utils\vvis_launcher\vvis_launcher.vcxproj" on node 4 (Build target(s)).
+     1>PreBuildEvent:
+         if EXIST ..\..\..\game\bin\.\vvis.exe for /f "delims=" %%A in ('attrib "..\..\..\game\bin\.\vvis.exe"') do set valveTmpIsReadOnly="%%A"
+         set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+         if "%valveTmpIsReadOnlyLetter%"=="R" del /q "D:\mod source\New folder\sp\src\utils\vvis_launcher\Debug\"vvis.exe
+         if exist "..\..\devtools\bin\vpc.exe" "..\..\devtools\bin\vpc.exe" -crc2 "vvis_launcher.vcxproj"
+         if ERRORLEVEL 1 exit /b 1
+         
+         :VCEnd
+       CustomBuild:
+         Running VPC CRC Check - vvis_launcher.vpc
+       Link:
+         vvis_launcher.vcxproj -> D:\mod source\New folder\sp\src\utils\vvis_launcher\.\Debug\.\vvis.exe
+       PostBuildEvent:
+         copy "D:\mod source\New folder\sp\src\utils\vvis_launcher\Debug\"vvis.exe ..\..\..\game\bin\.\vvis.exe >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         if exist "D:\mod source\New folder\sp\src\utils\vvis_launcher\Debug\"vvis.map copy "D:\mod source\New folder\sp\src\utils\vvis_launcher\Debug\"vvis.map ..\..\..\game\bin\.\vvis.map >nul
+         copy "D:\mod source\New folder\sp\src\utils\vvis_launcher\Debug\"vvis.pdb ..\..\..\game\bin\.\vvis.pdb >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         goto BuildEventOK
+         :BuildEventFailed
+         echo *** ERROR! PostBuildStep FAILED for Vvis_launcher! EXE or DLL is probably running. ***
+         del /q "D:\mod source\New folder\sp\src\utils\vvis_launcher\Debug\"vvis.exe
+         exit 1
+         :BuildEventOK
+         
+         :VCEnd
+     1>Done Building Project "D:\mod source\New folder\sp\src\utils\vvis_launcher\vvis_launcher.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.55

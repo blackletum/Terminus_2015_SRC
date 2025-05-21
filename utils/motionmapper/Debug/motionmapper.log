@@ -1,0 +1,33 @@
+﻿Build started 10.2.2014. 0:58:15.
+     1>Project "D:\mod source\New folder\sp\src\utils\motionmapper\motionmapper.vcxproj" on node 5 (Build target(s)).
+     1>PreBuildEvent:
+         if EXIST ..\..\..\game\bin\.\motionmapper.exe for /f "delims=" %%A in ('attrib "..\..\..\game\bin\.\motionmapper.exe"') do set valveTmpIsReadOnly="%%A"
+         set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+         if "%valveTmpIsReadOnlyLetter%"=="R" del /q "D:\mod source\New folder\sp\src\utils\motionmapper\Debug\"motionmapper.exe
+         if exist "..\..\devtools\bin\vpc.exe" "..\..\devtools\bin\vpc.exe" -crc2 "motionmapper.vcxproj"
+         if ERRORLEVEL 1 exit /b 1
+         
+         :VCEnd
+       CustomBuild:
+         Running VPC CRC Check - motionmapper.vpc
+       Link:
+         motionmapper.vcxproj -> D:\mod source\New folder\sp\src\utils\motionmapper\.\Debug\.\motionmapper.exe
+       PostBuildEvent:
+         copy "D:\mod source\New folder\sp\src\utils\motionmapper\Debug\"motionmapper.exe ..\..\..\game\bin\.\motionmapper.exe >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         if exist "D:\mod source\New folder\sp\src\utils\motionmapper\Debug\"motionmapper.map copy "D:\mod source\New folder\sp\src\utils\motionmapper\Debug\"motionmapper.map ..\..\..\game\bin\.\motionmapper.map >nul
+         copy "D:\mod source\New folder\sp\src\utils\motionmapper\Debug\"motionmapper.pdb ..\..\..\game\bin\.\motionmapper.pdb >nul
+         if ERRORLEVEL 1 goto BuildEventFailed
+         goto BuildEventOK
+         :BuildEventFailed
+         echo *** ERROR! PostBuildStep FAILED for Motionmapper! EXE or DLL is probably running. ***
+         del /q "D:\mod source\New folder\sp\src\utils\motionmapper\Debug\"motionmapper.exe
+         exit 1
+         :BuildEventOK
+         
+         :VCEnd
+     1>Done Building Project "D:\mod source\New folder\sp\src\utils\motionmapper\motionmapper.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.60

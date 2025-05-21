@@ -1,0 +1,21 @@
+﻿Build started 21.3.2014. 1:44:57.
+     1>Project "D:\mod source\New folder\sp\src\game\server\server_hl2.vcxproj" on node 4 (Build target(s)).
+     1>PreBuildEvent:
+         if EXIST ..\..\..\game\mod_hl2\bin\.\server.dll for /f "delims=" %%A in ('attrib "..\..\..\game\mod_hl2\bin\.\server.dll"') do set valveTmpIsReadOnly="%%A"
+         set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+         if "%valveTmpIsReadOnlyLetter%"=="R" del /q "D:\mod source\New folder\sp\src\game\server\Release_mod_hl2\"server.dll
+         if exist "..\..\devtools\bin\vpc.exe" "..\..\devtools\bin\vpc.exe" -crc2 "server_hl2.vcxproj"
+         if ERRORLEVEL 1 exit /b 1
+         
+         :VCEnd
+       CustomBuild:
+         Running VPC CRC Check - server_hl2.vpc
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\common /I..\..\public /I..\..\public\tier0 /I..\..\public\tier1 /I..\..\game\server\generated_proto_mod_hl2 /I"..\..\thirdparty\protobuf-2.3.0\src" /I.\ /I..\..\game\shared /I..\..\utils\common /I..\..\game\shared\econ /I..\..\game\server\NextBot /I..\..\game\shared\hl2 /I.\hl2 /Zi /nologo /W4 /WX- /MP /O2 /Ob2 /Oi /Ot /Oy- /D VPC /D RAD_TELEMETRY_DISABLED /D WIN32 /D _WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _ALLOW_RUNTIME_LIBRARY_MISMATCH /D _ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH /D _ALLOW_MSC_VER_MISMATCH /D _USING_V110_SDK71_ /D _WINDLL /D _MBCS /D COMPILER_MSVC32 /D COMPILER_MSVC32 /D COMPILER_MSVC /D _DLL_EXT=.dll /D DLLNAME=server /D BINK_VIDEO /D AVI_VIDEO /D WMV_VIDEO /D DEV_BUILD /D FRAME_POINTER_OMISSION_DISABLED /D GAME_DLL /D VECTOR /D VERSION_SAFE_STEAM_API_INTERFACES /D PROTECTED_THINGS_ENABLE /D sprintf=use_Q_snprintf_instead_of_sprintf /D strncpy=use_Q_strncpy_instead /D _snprintf=use_Q_snprintf_instead /D fopen=dont_use_fopen /D HL2_DLL /D USES_SAVERESTORE /D _EXTERNAL_DLL_EXT=.dll /D VPCGAMECAPS=VALVE /D "PROJECTDIR=D:\mod source\New folder\sp\src\game\server" /D _DLL_EXT=.dll /D VPCGAME=valve /D SOURCE1=1 /GF /Gm- /MT /GS /Gy /arch:SSE /fp:fast /Zc:wchar_t /Zc:forScope /GR /Yc"cbase.h" /Fp".\Release_mod_hl2\server.pch" /Fo".\Release_mod_hl2\/" /Fd".\Release_mod_hl2\/vc120.pdb" /Gd /TP /wd4316 /analyze- /FC /errorReport:prompt /Zm200 /d2Zi+ stdafx.cpp
+         stdafx.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory
+     1>Done Building Project "D:\mod source\New folder\sp\src\game\server\server_hl2.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:27.58

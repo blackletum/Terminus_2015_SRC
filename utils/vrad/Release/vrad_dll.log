@@ -1,0 +1,53 @@
+﻿Build started 21.3.2014. 1:45:01.
+     1>Project "D:\mod source\New folder\sp\src\utils\vrad\vrad_dll.vcxproj" on node 3 (Build target(s)).
+     1>PreBuildEvent:
+         if EXIST ..\..\..\game\bin\.\vrad_dll.dll for /f "delims=" %%A in ('attrib "..\..\..\game\bin\.\vrad_dll.dll"') do set valveTmpIsReadOnly="%%A"
+         set valveTmpIsReadOnlyLetter=%valveTmpIsReadOnly:~6,1%
+         if "%valveTmpIsReadOnlyLetter%"=="R" del /q "D:\mod source\New folder\sp\src\utils\vrad\Release\"vrad_dll.dll
+         if exist "..\..\devtools\bin\vpc.exe" "..\..\devtools\bin\vpc.exe" -crc2 "vrad_dll.vcxproj"
+         if ERRORLEVEL 1 exit /b 1
+         
+         :VCEnd
+       CustomBuild:
+         Running VPC CRC Check - vrad_dll.vpc
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\common /I..\..\public /I..\..\public\tier0 /I..\..\public\tier1 /I..\common /I..\vmpi /I..\vmpi\mysql\mysqlpp\include /I..\vmpi\mysql\include /Zi /nologo /W4 /WX- /MP /O2 /Ob2 /Oi /Ot /Oy- /D VPC /D RAD_TELEMETRY_DISABLED /D WIN32 /D _WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _ALLOW_RUNTIME_LIBRARY_MISMATCH /D _ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH /D _ALLOW_MSC_VER_MISMATCH /D _USING_V110_SDK71_ /D _WINDLL /D _MBCS /D COMPILER_MSVC32 /D COMPILER_MSVC32 /D COMPILER_MSVC /D _DLL_EXT=.dll /D DLLNAME=vrad_dll /D BINK_VIDEO /D AVI_VIDEO /D WMV_VIDEO /D DEV_BUILD /D FRAME_POINTER_OMISSION_DISABLED /D MPI /D PROTECTED_THINGS_DISABLE /D VRAD /D _EXTERNAL_DLL_EXT=.dll /D VPCGAMECAPS=VALVE /D "PROJECTDIR=D:\mod source\New folder\sp\src\utils\vrad" /D _DLL_EXT=.dll /D VPCGAME=valve /D SOURCE1=1 /GF /Gm- /MT /GS /Gy /arch:SSE /fp:fast /Zc:wchar_t /Zc:forScope /GR /Fo".\Release\.\/" /Fd".\Release\.\/vc120.pdb" /Gd /TP /wd4316 /analyze- /FC /errorReport:prompt /Zm200 /d2Zi+ ..\..\public\DispColl_Common.cpp ..\common\bsplib.cpp ..\common\utilmatlib.cpp SampleHash.cpp VRAD_DispColl.cpp VRadDisps.cpp VRadStaticProps.cpp VradDetailProps.cpp imagepacker.cpp incremental.cpp leaf_ambient_lighting.cpp lightmap.cpp mpivrad.cpp radial.cpp trace.cpp vismat.cpp vrad.cpp vraddll.cpp
+         DispColl_Common.cpp
+         bsplib.cpp
+         utilmatlib.cpp
+         SampleHash.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (..\..\public\DispColl_Common.cpp)
+         VRAD_DispColl.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (SampleHash.cpp)
+         VRadDisps.cpp
+         VRadStaticProps.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (VRAD_DispColl.cpp)
+         VradDetailProps.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (VRadDisps.cpp)
+         imagepacker.cpp
+         incremental.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (VRadStaticProps.cpp)
+         leaf_ambient_lighting.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (VradDetailProps.cpp)
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (imagepacker.cpp)
+         lightmap.cpp
+         mpivrad.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (lightmap.cpp)
+         radial.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (leaf_ambient_lighting.cpp)
+         trace.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (incremental.cpp)
+         vismat.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (mpivrad.cpp)
+         vrad.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (radial.cpp)
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (vismat.cpp)
+         vraddll.cpp
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (trace.cpp)
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (vrad.cpp)
+     1>d:\mod source\new folder\sp\src\public\terrainmod.h(14): fatal error C1083: Cannot open include file: 'vector.h': No such file or directory (vraddll.cpp)
+     1>Done Building Project "D:\mod source\New folder\sp\src\utils\vrad\vrad_dll.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:05.64
